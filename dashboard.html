@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <style>
+        *{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .frst{
+            margin-left: 15%;
+        }
+        #obj{
+            width: 70%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .con{
+            width: 30%;
+            border: 0.1px solid gray;
+            padding: 10px;
+        }
+        .con>h4{
+            margin-top: 5px;
+            font-size: 18px;
+            text-align: center;
+        }
+        .con>h6{
+            margin-top: -10px;
+            font-size: 12px;
+        }
+        .con img{
+            margin-left: 20px;
+        }
+        .progress{
+            width: 300px;
+            height: 15px;
+            margin: auto;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+        #obj>.con:nth-child(1)>.progress>.progress-fill{
+           /* width: 50%; */
+           height: 100%;
+           text-align: center;
+           background-color: #9c3353 ;
+           border-radius: 5px 0px 0px 5px;
+           animation: anim 5s forwards;
+        }
+        #obj>.con:nth-child(2)>.progress>.progress-fill{
+           /* width: 50%; */
+           height: 100%;
+           text-align: center;
+           background-color: #9c3353 ;
+           border-radius: 5px 0px 0px 5px;
+           animation: ani 5s forwards;
+        }
+        #obj>.con:nth-child(3)>.progress>.progress-fill{
+            height: 100%;
+           text-align: center;
+           background-color: #9c3353 ;
+           border-radius: 5px 0px 0px 5px;
+           animation: an 5s forwards;
+        }
+        
+        #nm{
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+        }
+        @keyframes anim{
+            0%{
+                width: 0%;
+            }
+            100%{
+                width: 63%;
+            }
+        }
+        @keyframes ani{
+            0%{
+                width: 0%;
+            }
+            100%{
+                width: 57%;
+            }
+        }
+        @keyframes an{
+            0%{
+                width: 0%;
+            }
+            100%{
+                width: 22.8%;
+            }
+        }
+        .progress-fill{
+            margin-left: 0px;
+        }
+        .m_y{
+            display: flex;
+            justify-content: space-between;
+        }
+        .lnd{
+            display: block;
+            width: 80%;
+            margin: auto;
+            background-color: #9c3353;
+            color: white;
+            height: 30px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+        }
+        hr{
+            width: 70%;
+            color: gray;
+        }
+        #scnd{
+            width: 70%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        #thrd{
+            width: 70%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #thrd>div:nth-child(1){
+            width: 42%;
+        }
+        #thrd>div:nth-child(2){
+            width: 55%;
+        }
+        #thrd>div:nth-child(2)>button{
+            width: 90px;
+            margin-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+        }
+        #fafb{
+            background-color: #133783 ;
+            color: white;
+        }
+        #fat{
+            background-color: #2daddc;
+            color: white;
+        }
+        #fag{
+            background-color: #dd4b39 ;
+            color: white;
+        }
+        #frth{
+            width: 70%;
+            margin: auto;
+        }
+        #frth>a{
+            display: block;
+            text-decoration: none;
+            color: black;
+            margin-top: 20px;
+        }
+        #frth>a:hover{
+            text-decoration: underline;
+        }
+        #frth>hr{
+            width: 100%;
+        }
+        #frth>div{
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        #frst>p{
+            color: teal;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="frst">
+        <h1 id="logged_prsn"></h1>
+    </div>
+    <hr>
+    <div class="frst">
+        <p>You are now part of the Milaap Family! Start making an Impact by giving a Loan or starting a campaign.</p>
+        <h2>Make a Loan</h2>
+    </div>
+    <div id="obj">
+
+    </div>
+    <hr>
+    <div class="frst">
+        <h2>Do more than just loaning!</h2>
+        <p>Campaigns empowers you to create a larger impact by your friends to loan to the project you feel strongly about. Creating it is really simple!</p>
+    </div>
+    <div id="scnd">
+        <div>
+            <h3>1. Select a Project</h3>
+            <p>Find a project or Impact area you feel strongly for!</p>
+        </div>
+        <div>
+            <h3>2. Create a Campaign</h3>
+            <p>Create and customize your own campaign page.</p>
+        </div>
+        <div>
+            <h3>3. Spread the Word!</h3>
+            <p>Invite your friends and family to support YOU!</p>
+        </div>
+    </div>
+    <hr>
+    <div id="thrd">
+        <div>
+            <h2>Invite Your Family & Friends</h2>
+            <p>Create a ripple, Spread the Word! Create an Impact by inviting your Family & Friends.</p>
+        </div>
+        <div>
+            <button id="fafb"><i class="fa-brands fa-facebook"></i> Share</button><button id="fat"><i class="fa-brands fa-twitter"></i> Tweet</button><button id="fag"><i class="fa-regular fa-envelope"></i> Gmail</button>
+        </div>
+    </div>
+    <hr>
+    <div class="frst">
+        <h2>Still have Questions? We are here to help you</h2>
+    </div>
+    <div id="frth">
+        <a href="#fir_h" id="fir_a">Is Milaap an NGO?</a>
+        <hr>
+        <div id="fir_h">
+            Milaap is not an NGO. We are a mission-driven, private limited company where social impact and self-sustainability are our primary goals. In order to scale Milaap and reach as many families as possible, we’ve raised capital & resources from social investors to fund our technology, field operations and other long-term expenditures. Our goal is to be a self-sustainable organization.
+        </div>
+        <a href="#fir_h" id="se_a">What payment options can I use to make a loan?</a>
+        <hr>
+        <div id="se_h">
+            100%. To ensure that your entire loan amount reaches the end borrower, Milaap also absorbs the payment transaction charges (credit/debit card, net banking, PayPal, Stripe) on your loan payment.
+        </div>
+        <a href="#se_h" id="th_a">How much of the loan I give reaches the borrower?</a>
+        <hr>
+        <div id="th_h">
+            100%. To ensure that your entire loan amount reaches the end borrower, Milaap also absorbs the payment transaction charges (credit/debit card, net banking, PayPal, Stripe) on your loan payment.
+        </div>
+        <a href="#th_h" id="fo_a">Is my loan tax deductible?</a>
+        <hr>
+        <div id="fo_h">
+            Since the loans you make on Milaap are repaid by the borrowers, your loan is not tax deductible. Unlike charitable contributions where you make a donation (which can be tax deductible), Milaap accepts only loans made by you to deserving borrowers across India.
+        </div>
+        <a href="#fo_h" id="fi_a">Am I being charged any fees?</a>
+        <hr>
+        <div id="fi_h">
+            Milaap does not charge lenders a fee to lenders. We even absorb transaction fees to ensure that lenders are able to create maximum impact with their loans . Milaap charges a 5% fee on the loans disbursed to its field partners, in order to cover a fraction of its operating costs. We’ve also raised funds from private individuals and institutions to sustain our operations. Learn more about them here
+        </div>
+        <a href="#fi_h" id="si_a">How can I get in touch with you</a>
+        <hr>
+        <div id="si_h">
+            The fastest way to reach us is through Twitter or Facebook. Send a tweet to @milaapdotorg or post on our page – https://www.facebook.com/milaap
+            For issues pertaining to loan payment, repayments and general queries, send an email to feedback [AT] milaap [DOT] org.
+            You can also call us at + 91 9916174848 Monday – Friday 10AM to 7PM (IST).
+        </div>
+    </div>
+    
+</body>
+</html>
+<script>
+    let data=[
+        {
+            img:"https://cimages.milaap.org/milaap/image/upload/c_fill,g_faces,h_176,w_282/v1656834689/production/images/loan/a029000000uOWxfAAG-IMG-20181015-WA0008_1656834687.jpg",
+            title:"Arti Rani Mahato And Group",
+            loc:"Location: Karandighi, West Bengal",
+            purpose:"Purpose: to purchase seeds, fertilizers etc. in order to expand the existing farming business.",
+            percent:"63.78%",
+            Raised:"Rs. 3,18,877.89",
+            goal:"Rs.5,00,000.00"
+
+        },
+        {
+            img:"https://cimages.milaap.org/milaap/image/upload/c_fill,g_faces,h_176,w_282/v1660292014/production/images/loan/a020o0000182Ln2AAE-SAT2B01_1660292012.jpg",
+            title:"Ranita And Group",
+            loc:"Location: Sega Road Branch, Manipur",
+            purpose:"Purpose: To pay the school fees, private tuition fee, exam fee and buy study materials for their children",
+            percent:"57.18%",
+            Raised:"Rs. 1,37,225.50",
+            goal:"Rs.2,40,000.00"
+        },
+        {
+            img:"https://cimages.milaap.org/milaap/image/upload/c_fill,g_faces,h_176,w_282/v1656735329/production/images/loan/a020o000011o3FYAAY-KarandighiBrJuiGroup_1656735328.jpg",
+            title:"Rina Das And Group",
+            loc:"Location: Karandighi, West Bengal",
+            purpose:"Purpose: to purchase seeds, fertilisers and other raw materials for the cultivation of paddy and vegetables",
+            percent:"22.8%",
+            Raised:"Rs. 1,71,076.70",
+            goal:"Rs.7,50,000.00"
+        },
+
+    ];
+
+    append(data);
+
+    function append(data){
+        data.forEach((el)=>{
+            let image=document.createElement("img");
+            image.src=el.img;
+            let title=document.createElement("h4");
+            title.innerText=el.title;
+            let loc=document.createElement("h6");
+            loc.innerText=el.loc;
+            let purpose=document.createElement("h6");
+            purpose.innerText=el.purpose;
+            let bar=document.createElement("div");
+            bar.setAttribute("class","progress");
+            let bar1=document.createElement("div");
+            bar1.setAttribute("class","progress-fill");
+            let bar2=document.createElement("div");
+            bar2.innerHTML=el.percent
+            bar2.setAttribute("id","nm");
+            bar1.append(bar2);
+            bar.append(bar1);
+            let money=document.createElement("div");
+            money.setAttribute("class","m_y");
+            let raise=document.createElement("div");
+            let gol=document.createElement("div");
+            let r=document.createElement("p");
+            r.innerText="Raised";
+            let amt=document.createElement("p");
+            amt.innerText=el.Raised
+            let g=document.createElement("p");
+            g.innerText="Goal";
+            let gl=document.createElement("p");
+            gl.innerText=el.goal
+            raise.append(r,amt);
+            gol.append(g,gl);
+            money.append(raise,gol)
+            let btn=document.createElement("button");
+            btn.innerText="Lend now"
+            btn.setAttribute("class","lnd")
+            let box=document.createElement("div");
+            box.setAttribute("class","con")
+            box.append(image,title,loc,purpose,bar,money,btn);
+            document.getElementById("obj").append(box);
+        })
+    };
+
+    let loggeddata= JSON.parse(localStorage.getItem("succ")) || [];
+
+    
+
+    window.addEventListener("load",()=>{
+       inputdata();
+    })
+    function inputdata(){
+        let nam=document.getElementById("logged_prsn");
+    for(let i in loggeddata){
+        if(i==="name"){
+            nam.innerText=`Welcome, ${loggeddata[i]}`
+        }
+    }
+};
+
+let div1=document.getElementById("fir_h");
+let div2=document.getElementById("se_h");
+let div3=document.getElementById("th_h");
+let div4=document.getElementById("fo_h");
+let div5=document.getElementById("fi_h");
+let div6=document.getElementById("si_h");
+let c=0;
+let c2=0;
+let c3=0;
+let c4=0;
+let c5=0;
+let c6=0;
+document.getElementById("fir_a").addEventListener("click",()=>{
+    c++;
+    if(c%2!==0){
+        div1.style.display="block";
+        div2.style.display="none";
+        div3.style.display="none";
+        div4.style.display="none";
+        div5.style.display="none";
+        div6.style.display="none";
+    }else{
+        div1.style.display="none";
+    }   
+});
+document.getElementById("se_a").addEventListener("click",()=>{
+    c2++;
+    if(c2%2!==0){
+        div1.style.display="none";
+        div2.style.display="block";
+        div2.style.transition="all 0.8sec"
+        div3.style.display="none";
+        div4.style.display="none";
+        div5.style.display="none";
+        div6.style.display="none";
+    }else{
+        div2.style.display="none";
+    }   
+});
+document.getElementById("th_a").addEventListener("click",()=>{
+    c3++;
+    if(c3%2!==0){
+        div1.style.display="none";
+        div2.style.display="none";
+        div3.style.display="block";
+        div4.style.display="none";
+        div5.style.display="none";
+        div6.style.display="none";
+    }else{
+        div3.style.display="none";
+    }   
+});
+document.getElementById("fo_a").addEventListener("click",()=>{
+    c4++;
+    if(c4%2!==0){
+        div1.style.display="none";
+        div2.style.display="none";
+        div3.style.display="none";
+        div4.style.display="block";
+        div5.style.display="none";
+        div6.style.display="none";
+    }else{
+        div4.style.display="none";
+    }   
+});
+document.getElementById("fi_a").addEventListener("click",()=>{
+    c5++;
+    if(c5%2!==0){
+        div1.style.display="none";
+        div2.style.display="none";
+        div3.style.display="none";
+        div4.style.display="none";
+        div5.style.display="block";
+        div6.style.display="none";
+    }else{
+        div5.style.display="none";
+    }   
+});
+document.getElementById("si_a").addEventListener("click",()=>{
+    c6++;
+    if(c6%2!==0){
+        div1.style.display="none";
+        div2.style.display="none";
+        div3.style.display="none";
+        div4.style.display="none";
+        div5.style.display="none";
+        div6.style.display="block";
+    }else{
+        div6.style.display="none";
+    }   
+})
+
+
+
+</script>
