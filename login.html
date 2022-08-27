@@ -170,7 +170,7 @@
             <a href="#">Forgot Password?</a>
             <div class="con" id="con1">
                 <p>New to Milaap? Sign up now, it’s quick & free </p>
-                <button>Sign up</button>
+                <button id="sgnup">Sign up</button>
             </div>
         </div>
     </div>
@@ -219,11 +219,15 @@
                 
             }
             return el.email==email&&el.password==pass;
-        });console.log(filtered)
+        });
         if(filtered.length>0){
             return true;
         }else{
             return false;
         }
     };
+
+    document.getElementById("sgnup").addEventListener("click",()=>{
+        window.location.href="signup.html"
+    })
 </script>

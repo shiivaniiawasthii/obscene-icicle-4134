@@ -10,7 +10,9 @@
         body{
             background-color: #762b4b;
         }
-
+        *{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
         #big_div{
             width: 70%;
             height: 500px;
@@ -153,7 +155,7 @@
             <button id="signup_data">Sign up</button>
             <div class="con" id="con1">
                 <p>Already signed up with Milaap?</p>
-                <button>Login</button>
+                <button id="lgin">Login</button>
             </div>
         </div>
     </div>
@@ -170,14 +172,14 @@
 
     let signupdata = JSON.parse(localStorage.getItem("data1")) || [];
 
-
     function getdata(event) {
         event.preventDefault();
-
+        
         let data = {
             name: document.getElementById("name").value,
             email: document.getElementById("email").value,
             password: document.getElementById("password").value,
+            id:Date.now(),
 
         }
         if (checkusername(data.email) === true) {
@@ -204,4 +206,8 @@
             return true;
         }
     };
+
+    document.getElementById("lgin").addEventListener("click",()=>{
+        window.location.href="login.html"
+    })
 </script>
