@@ -1,0 +1,44 @@
+#append_div{
+        display: grid;
+        grid-template-columns: repeat(3,400px);
+        /* border: 1px solid blue; */
+        width: 80%;
+        margin: auto;
+}
+.cont23{
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+        margin: 20px;
+}
+.discount_medical{
+        /* border: 1px solid pink; */
+        width: 300px;
+        margin: auto;
+}
+.image-medical{
+        width: 350px;
+        display: block;
+        margin: auto;
+}
+.name-medical{
+        color: rgb(71, 5, 71);
+        display: block;
+        width: fit-content;
+        text-align: center;
+        margin: auto;
+        /* border: 1px solid rgb(0, 128, 28); */
+}
+
+.cr{
+        /* border: 1px solid rgb(0, 128, 28); */
+        width: 100%;
+       
+        font-size: 14px;
+        margin-left: 100px;
+        margin-top: 20px;
+}
+.create_medical{
+        /* border: 1px solid blue; */
+        width: fit-content;
+        margin-left: 100px;
+}

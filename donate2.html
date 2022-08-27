@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Donate</title>
+</head>
+<style>
+        #millapwill{
+                color:grey;
+                background-color: #e0e2e4;
+                padding: 3px;
+                width: fit-content;
+                margin-top: -19px;
+                
+        }
+        #donate_cont1{
+                /* border: 1px solid red; */
+                
+                display: flex;
+                width: 80%;
+                margin: auto;
+                margin-top: 10px;
+        }
+        #right{
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+;padding: 10px;
+                width: 40%;
+        }
+        #left{
+              
+                width: 60%;
+                margin: 10px;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+        }
+        #appendhere{
+                /* border: 1px solid blue; */
+                width: 90%;
+                margin: auto;
+        }
+        .aname{
+                
+                width: 100%;
+                font-size: 20px;
+        }
+        .aimg{
+                border: 1px solid rgb(15, 15, 15);
+                width: 600px;
+                border-radius: 10px;
+                display: block;
+                margin: auto;
+
+        }
+        .story{
+                font-size: 22px;
+                width: 600px;
+        }
+
+        /* completion bar------------------- */
+      
+          
+
+
+        #donate-h3{
+                
+                font-weight: lighter;
+                width: fit-content;
+                margin-top: -23px;
+                margin-left: 35px;
+        }
+        #s102-h3{
+                
+                color: purple;
+                font-weight: 100;
+                font-size: 15px;
+                margin-top: -40px;
+                margin-left: 250px;
+
+        }
+        /* ================================== */
+        
+
+
+
+
+
+        #recieve{
+                /* border: 1px solid blue; */
+                border-left:2px solid  purple ;
+                background-color: rgb(244, 238, 238);
+                margin-left: 10px;
+                padding: 8px;
+
+
+        }
+        #donate_button{
+                /* border: 1px solid blue; */
+                display: block;
+                width: 300px;
+                padding: 10px;
+                border-radius: 20px;
+                margin: auto;
+                font-size: 18px;
+                background-color: #9C3353 ;
+                color: aliceblue;
+        }
+        #card{
+                width: fit-content;
+                margin: auto;
+                margin-top: 10px;
+                color: rgb(94, 88, 88);
+        }
+        #or{
+                color: #9C3353;
+                width: fit-content;
+                margin: auto;
+                margin-top: 10px;
+
+        }
+       
+        
+        #scan_img{
+                border: 1px solid grey;
+                width: 180px;
+                padding: 10px;
+               display: block;
+                margin: auto;
+                margin-top: 10px;
+             opacity: 50%;
+
+        }
+        #scan_p{
+                width: fit-content;
+                margin: auto;
+                color: grey;
+                margin-top: 20px;
+        }
+        #scan{
+                width: fit-content;
+                margin-top: 10px;
+                margin: auto;
+        }
+        .priceneeded{
+               
+                color: #9C3353;
+                font-size: 20px;
+        }
+        .priceneeded2{
+                /* border: 1px solid  #9C3353; */
+                color: grey;
+                font-size: 17px;
+
+        }
+       
+       
+
+</style>
+<link rel="stylesheet" href="./components/nav.css">
+
+
+<body>
+        <div id="nav"></div>
+        <div id="donate_cont1">
+                <div id="left">
+                        <div id="millapwill"><p>Milaap will not charge any dee on your donation to this campaign.</p></div>
+                        <div id="appendhere">
+                                
+                        
+                        </div>
+
+                </div>
+                <div id="right">
+                        <img src="https://assets.milaap.org/assets/donate-icon-7cabb309d2c7a586a914c0a23abe52032aa0ce01115fb54e07c6148ab2cf8c6a.svg">
+                        <h3 id="donate-h3">Donate</h3>
+                        <h3 id="s102-h3" >102 supporters</h3>
+
+                        <!-- completion bar -->
+                       
+                            
+                        
+                       
+
+                        <p id="recieve">Recieve tax benifits by donating to this cause</p>
+                        <button id="donate_button">Donate Now</button>
+                        <p id="card">Card, Netbanking,checkque and pickups</p>
+                        <p id="or">or Denote using</p>
+                        <img id="scan_img" src="https://assets.milaap.org/assets/qr_code-4663c94becb62937467a2d00e761e207e3a7af3490f0b73577fa0a1392fbda0f.jpg"  color="grey">
+                        
+                        <p id="scan_p">Scan & donate with any  app</p>
+                  
+                                <div id="scan"><img src="./photos/Screenshot 2022-08-26 112135scan.png"></div>
+
+                     
+
+
+                </div>
+
+        </div>
+       
+       
+
+</div> 
+<div id="footer"></div>
+
+</body>
+
+</html>
+<script>
+        let arr = JSON.parse(localStorage.getItem("causedata"))
+        console.log(arr)
+append(arr)
+
+
+        function append(data) {
+
+               
+
+
+
+                let div = document.createElement("div")
+
+
+
+                let img = document.createElement("img")
+                let create_by = document.createElement("p")
+                let Title = document.createElement("p")
+                let discount = document.createElement("p")
+                discount.innerHTML = data.discount;
+
+                let price = document.createElement("p")
+                price.innerHTML = data.fund_Raise;
+                let description = document.createElement("p")
+                description.innerHTML = data.description
+
+                let price2 = document.createElement("p")
+                price2.innerHTML = "Price Needed"
+                create_by.innerHTML = data.create_by
+                let story = document.createElement("p")
+                story.innerHTML = "Story"
+
+                let crby = document.createElement("p");
+                crby.innerText = data.crb
+
+
+
+                Title.innerHTML = data.Title
+                img.src = data.image;
+
+
+                Title.setAttribute("class","aname")
+               img.setAttribute("class","aimg")
+               story.setAttribute("class","story")
+               price.setAttribute("class","priceneeded")
+               price2.setAttribute("class","priceneeded2")
+                
+
+                div.append( Title, img,create_by,price2,price,story,description)
+                document.getElementById("appendhere").append(div)
+
+
+        }
+</script>
+
+<script type="module">
+        import nav from "./components/nav.js"
+        document.getElementById("nav").innerHTML=nav()
+        console.log(nav)
+</script>
+
+<script type="module">
+        import footer from "./components/footer.js"
+        document.getElementById("footer").innerHTML=footer()
+        console.log(footer)
+</script>
+
+
+
+

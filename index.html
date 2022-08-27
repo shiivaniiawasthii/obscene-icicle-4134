@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./components/nav.css">
+      
+        <link rel="stylesheet" href="home.css">
+        <style>
+                 /*--------------------- home page------------------------------ */
+                body {
+                        background-color: white;
+                        font-family: Arial, Helvetica, sans-serif;
+
+                }
+
+                #home_logo img {
+                        /* border: 1px solid red; */
+                        width: 530px;
+                        margin-left: 970px;
+                        margin-top: -570px;
+
+                }
+
+                #home_first {
+                        /* border:1px solid blue; */
+                        background-color: white;
+                        padding: 10px;
+                        font-size: 22px;
+                        font-weight: 100;
+                        margin-left: 400px;
+                        margin-top: 50px;
+                        width: fit-content;
+                        color: #5D5D5D;
+                        border-radius: 10px;
+                        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                        position: relative;
+
+
+                }
+
+                #icon_circle {
+                        margin-left: 10px;
+                        border-radius: 100%;
+
+                        background-color: #9C3353;
+                        color: white;
+                        width: 20px;
+
+                }
+
+                #milaap_word {
+
+                        width: fit-content;
+                        font-size: 35px;
+                        font-weight: 200;
+                        color: #212121;
+
+                }
+
+                #free {
+
+                        color: #5D5D5D;
+                        margin-top: -12px;
+                        font-size: 25px;
+                        font-weight: 100;
+
+                }
+
+                #raise {
+                        color: #212121;
+                        font-size: 20px;
+                        font-weight: 100;
+
+                }
+
+                #home_container {
+                        display: flex;
+                        flex-direction: column;
+                        /* border: 1px solid rgb(226, 46, 76); */
+                        width: 40%;
+                        margin-left: 140px;
+                        margin-top: 15px;
+                }
+
+                #home_num {
+                        display: flex;
+                        justify-content: space-around;
+                        width: 90%;
+
+                        margin-top: 20px;
+
+
+                }
+
+                #home_num div {
+                        margin: 10px;
+                }
+
+                .fund_num {
+                        color: #691A47;
+                        font-size: 20px;
+                        font-weight: 100;
+                }
+
+                .fund_num2 {
+                        color: #5D5D5D;
+                        font-size: 20px;
+                        /* border: 1px solid black; */
+                        margin-top: -20px;
+                        font-weight: 100;
+
+                }
+
+                #start_fund1 {
+
+                        border-radius: 20px;
+                        font-size: 20px;
+                        background-color: #9C3353;
+                        color: white;
+                        height: 40px;
+                        width: 290px;
+                        text-align: center;
+                        padding: 4px;
+
+
+
+
+                }
+
+                #start_fund1 a {
+                        display: block;
+                        margin-top: 8px;
+                        /* border: 1px solid red; */
+                }
+
+                #home_lastcont {
+                        /* border: 1px solid teal; */
+                        border-radius: 5px;
+                        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+                        width: 73%;
+                        margin: auto;
+                        background-color: #FBF2F4;
+                        display: flex;
+                        padding: 5px;
+                        margin-top: -53px;
+                        position: relative;
+                        border-left: 7px solid #691A47;
+                }
+
+                #pic1 {
+                        width: 60px;
+                        height: 40px;
+
+                        color: #691A47;
+                        margin-left: 240px;
+                }
+
+                #home_last {
+
+                        color: #212121;
+                        font-size: 20px;
+                        font-weight: 100;
+                        margin-left: 20px;
+                }
+
+                #diomand {
+
+                        margin-left: 150px;
+                }
+
+                #zero {
+                        color: #691A47;
+                        font-size: 43px;
+                        z-index: 70%;
+                        margin-left: 80px;
+                }
+                #thousand{
+                        color: #212121;
+                        font-size: 30px;
+                        font-weight: 100;
+                        margin-left: 540px;
+                        margin-top: 45px;
+
+                }
+                #ssdiomand{
+                        margin-left: 580px;
+                        margin-top: 5px;
+
+                }
+                #searchfund{
+                        width: 30%;
+                        display: block;
+                        margin-left: 580px;
+                        margin-top: 25px;
+                        text-align: center;
+                        padding: 10px;
+                        border-radius: 16px 0px 0px 16px;
+                        border: 1px solid #691A47;;
+                        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+                }
+                #serachicon{
+                        width: 30px;
+                        display: block;
+                         padding: 10px;
+                        border-radius: 0px 16px 16px 0px;
+                        margin-top: 26px;
+                        border: 1px solid #691A47;
+                        background-color: #9C3353;
+                        color: #FBF2F4;
+                        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+                       
+
+                }
+                #seach_cont{
+                        display: flex;
+                }
+                #fund_type{
+                        display: flex;
+                        /* border: 1px solid red; */
+                        width: 34%;
+                        margin:auto ;
+                        margin-left: 590px;
+                }
+               
+                #fund_type div{
+                        /* border: 1px solid blue; */
+                        margin: 40px;
+                        padding: 19px;
+                        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+                }   
+#fund_type div:hover{
+        background-color:#691A47;
+        color: #FFFFFF;
+}  
+
+
+/*------------------------------------ */
+#what{
+        border: 1px solid blue;
+        width: 500px;
+        display: block;
+        margin-top: -500px;
+        margin-left: 600px;
+}
+#slide{
+        border: 1px solid green;
+        margin-left: 410px;
+        margin-top: 20px;
+}
+
+.slide1{
+        display: flex;
+       
+}
+.slide1 img{
+        width: 850px;
+}
+.slide1-2{
+        border: 1px solid teal;
+        width: 260px;
+
+}
+.n{
+        border:  transparent; ;
+        position: relative;
+        top: 150px;
+        margin-left: 1320px;
+        display: block;
+        
+
+
+
+}
+.pr{display: block;
+      border: transparent;
+        position: relative;
+        top: 180px;
+        margin-left: 300px;
+
+}
+.main{
+        display: flex;
+        /* border:1px solid red; */
+        margin-top: 70px;
+        margin-left: -80px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;}
+.main div:nth-child(1){
+        border-right: 2px solid #691A47 ;
+}
+.main div{
+        /* border: 1px solid pink; */
+        margin: 5px;
+        padding: 20px;
+        color: #691A47;
+
+}
+.profile_name{
+        
+        padding: 10px;
+        padding-top: -13px;
+        display: block;
+       
+        text-align: center;
+        margin-left: 160px;
+}
+        </style>
+</head>
+
+<body>
+        <div id="nav">
+               <div id="appendprofile">
+              
+               </div>
+         </div>
+         
+
+
+        <!-- home page -->
+        <div id="home_cont">
+                <div id="home_first">
+                        Fundraising Just Got A Fun New Makeover With Milaap360!+<svg id="icon_circle"
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                <path
+                                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                        </svg>
+                </div>
+
+
+        </div>
+        <div id="home_container">
+                <h1 id="milaap_word">Milaap</h1>
+                <h2 id="free">Free Crowdfunding for India</h2>
+                <h2 id="raise">Raise funds online for medical emergencies and social causes</h2>
+                <div id="start_fund1"><a>Start a fundraiser - it's FREE</a></div>
+                <div>
+                        <div id="home_num">
+                                <div>
+                                        <h1 class="fund_num">702,000+</h1><br>
+                                        <h1 class="fund_num2">Fundraisers</h1>
+                                </div>
+                                <div>
+                                        <h1 class="fund_num">$296 Million +</h1><br>
+                                        <h1 class="fund_num2">Raised</h1>
+                                </div>
+                                <div>
+                                        <h1 class="fund_num"> 8.4 Million +</h1>
+                                        <br>
+                                        <h1 class="fund_num2">Donations</h1>
+                                </div>
+                        </div>
+                </div>
+
+        </div>
+        <div id="home_logo"><img
+                        src="https://cimages.milaap.org/milaap/image/upload/v1655996033/production/entity_details/milaap_page/524/Desktop_img_2__5__1655996032.jpg">
+        </div>
+        <div id="home_lastcont">
+                <div><svg id="pic1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-megaphone" viewBox="0 0 16 16">
+                                <path
+                                        d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0v-.214c-2.162-1.241-4.49-1.843-6.912-2.083l.405 2.712A1 1 0 0 1 5.51 15.1h-.548a1 1 0 0 1-.916-.599l-1.85-3.49a68.14 68.14 0 0 0-.202-.003A2.014 2.014 0 0 1 0 9V7a2.02 2.02 0 0 1 1.992-2.013 74.663 74.663 0 0 0 2.483-.075c3.043-.154 6.148-.849 8.525-2.199V2.5zm1 0v11a.5.5 0 0 0 1 0v-11a.5.5 0 0 0-1 0zm-1 1.35c-2.344 1.205-5.209 1.842-8 2.033v4.233c.18.01.359.022.537.036 2.568.189 5.093.744 7.463 1.993V3.85zm-9 6.215v-4.13a95.09 95.09 0 0 1-1.992.052A1.02 1.02 0 0 0 1 7v2c0 .55.448 1.002 1.006 1.009A60.49 60.49 0 0 1 4 10.065zm-.657.975 1.609 3.037.01.024h.548l-.002-.014-.443-2.966a68.019 68.019 0 0 0-1.722-.082z" />
+                        </svg></div>
+                <div id="home_last">Our crowdfunding platform charges NO fees</div>
+                <div><img id="diomand"
+                                src="https://assets.milaap.org/assets/home/diamond-9ce851717cc50c7de40ec2977af60e21c799ad40001782db3fa136582b0e4ff5.png">
+                </div>
+                <div id="zero">0%</div>
+        </div>
+        <div id="thousand">Thousands are fundraising online on Milaap</div>
+        <div><img id="ssdiomand" src="./photos/Screenshot 2022-08-24 215041.png"></div>
+        
+        <div id="seach_cont"><input id="searchfund" placeholder="Search by fundraiser name, title, location, cause or other keywords">
+                <svg id="serachicon"xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                      </svg></div>
+
+
+        <div id="fund_type">
+                <div onclick="medical()"><img src="https://assets.milaap.org/assets/home/medical-icon-22eba5bcdf629bb6e4244cdaab2d40c12e2e5fa63b83d27654423737ef4319ca.png"></div>
+                <div onclick="memorial()"><img src="https://assets.milaap.org/assets/home/memorial-icon-d649fd768074bb5124e32420e406bb00b1524ee5d277747db46964e82ad914bb.png"></div>
+                <div onclick="education()"><img src="https://assets.milaap.org/assets/home/education-icon-710f135e0b777734a9ca958da28464f386379cb78ed4880e978ac9790eb45a8d.png"></div>
+        </div>
+        
+             
+        <!-- append here  -->
+        <div id="append_div">
+
+        </div>
+   
+        <div><img src="./photos/Screenshot 2022-08-24 223646-foot1.png" width="1533px"></div>
+        <div><img src="./photos/Screenshot 2022-08-24 224142-foot2.png" width="1533px"></div>
+      <div><img src="https://assets.milaap.org/packs/_/assets/images/home/testimonial-bg-703d695dffc4e175064a2bd22140a262.png" width="1530px">
+<div><img id="what" src="./photos/Screenshot 2022-08-25 080404what.png"></div>
+</div>
+
+
+
+
+
+
+
+
+<!-- slideshow -->
+       
+       
+
+
+<button class="pr" onclick="previous()">Prev ⬅️</button>
+<button class="n" onclick="next()">Next<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-forward-fill" viewBox="0 0 16 16">
+        <path d="m9.77 12.11 4.012-2.953a.647.647 0 0 0 0-1.114L9.771 5.09a.644.644 0 0 0-.971.557V6.65H2v3.9h6.8v1.003c0 .505.545.808.97.557z"/>
+      </svg></button>
+<div id="slide">
+        <div class="slide1">
+                <div> <img src="./photos/Screenshot 2022-08-25 083210r2.png"></div>
+                
+        </div>
+</div>
+
+
+
+<!-- footer -->
+<div id="footer">
+</div>
+</body>
+
+</html>
+
+
+<script type="module" src="./components/nav_fun.js">
+       
+        
+  
+
+</script>
+
+
+<script type="module">
+        import footer from "./components/footer.js"
+        document.getElementById("footer").innerHTML=footer()
+        console.log(footer)
+</script>
+
+
+
+<script>
+        let image = [
+                "./photos/Screenshot 2022-08-25 083446pu2.png",
+                "./photos/Screenshot 2022-08-25 083528aa.png",
+                "./photos/Screenshot 2022-08-25 083528aa.png",
+                "./photos/Screenshot 2022-08-25 083604bb.png",
+                "./photos/Screenshot 2022-08-25 083631cc.png"]
+        let index = 0, id, position;
+        let cont = document.getElementById("slide");
+     
+        
+
+
+
+
+        
+        let next = () => {
+                cont.innerHTML = null;
+                index++
+                if (index > image.length - 1) {
+                        index = 0
+                }
+               
+                let img = document.createElement("img")
+                img.src = image[index]
+                // position = "start"
+                let div = document.createElement("div")
+                div.append(img)
+                cont.append(div)
+
+
+
+        }
+
+
+        let previous = () => {
+                cont.innerHTML = null
+
+                index--
+                if (index < 0) {
+                        index = image.length - 1
+                }
+               
+                let img = document.createElement("img")
+                img.src = image[index]
+                // position = "start"
+                let div = document.createElement("div")
+                div.append(img)
+                cont.append(div)
+
+
+
+        }
+
+
+
+
+
+
+
+
+</script>
+
+<script src="./homepage.js"></script>
+
+
+
+
+
+

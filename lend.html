@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lend</title>
+    <link rel="stylesheet" href="./components/nav.css">
 
     <style>
         #top{
@@ -398,4 +399,11 @@ let filter = document.getElementById("f1")
             display(filtered2);
         }
     })
+</script>
+<script type="module" src="./components/nav_fun.js"></script>
+
+<script type="module">
+    import footer from "./components/footer.js"
+    document.getElementById("footer").innerHTML=footer()
+    console.log(footer)
 </script>
