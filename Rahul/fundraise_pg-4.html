@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Fundraiser</title>
+</head>
+<style>
+
+body
+{
+    font-family: 'Poppins', sans-serif;
+    margin: 0%;
+    text-align: center;
+}
+
+#fr_nav_step
+{
+    display: flex;
+}
+
+#fr_nav_step>p:first-child
+{
+    margin-right: 5px;
+    color: green;
+}
+#fr_nav_left
+{
+    display: flex;
+    align-items: center;
+}
+#fr_nav_left>h3
+{
+    font-weight: 400;
+    align-items: center;
+}
+
+#fr_nav
+{
+    display: flex;
+    position: relative;
+    z-index: 1;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 7%;
+    padding-right: 7%;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+    margin-bottom: 0%;
+}
+#fr_Medical
+{
+    background-color: #691a47;
+}
+
+.fr_select_p
+{
+    font-weight: 300;
+    font-size: 13px;
+}
+
+#fr_cause_medical_p
+{
+    color: white;
+}
+
+#fr_logo
+{
+    height: 40px;
+    width: 100px;
+    margin-top: -6px;
+    margin-right: 30px;
+}
+
+
+
+/* midsection */
+
+
+#fr_mid_3
+{
+
+    display: grid;
+    grid-template-columns: repeat(1,auto);
+    justify-content: center;
+    text-align: center;
+}
+
+#fr_top_title
+{
+    margin: auto;
+    margin-bottom: 10px;
+    width: 200px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background-color: rgb(235, 235, 235);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+#tablebx
+{
+    margin-top: -20px;
+    width: 100%;
+    padding: 50px;
+    margin-bottom: 150px;
+}
+.verimg
+{
+    width: 80px;
+    height: 80px;
+}
+.td1t
+{
+    background-color: rgb(242, 242, 242);
+    height: 80px;
+    width: 150px;
+    font-size: 13px;
+    font-weight: bold;
+}
+.td2long
+{
+    width: 70%;
+    text-align: left;
+    padding-left: 80px;
+    border: 1px solid rgb(242, 242, 242);
+    font-size: 13px;
+}
+
+
+.popinput
+{
+    text-align: center;
+    background-color: white;
+    width: 350px;
+    height: auto;
+    padding: 60px 30px;
+    border-radius: 5px;
+    border: 1px solid rgb(213, 213, 213);
+    position: fixed;
+    top: 0%;
+    left: 50%;
+    z-index: 10;
+    transform: translate(-50%,-50%)scale(0.1);
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s ease-in-out;
+}
+.open-popinput
+{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%,-50%)scale(1);
+}
+
+
+.popinput>button
+{
+    padding: 10px;
+    width: 100px;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    background-color: #691a47;
+}
+
+.popinput>button:hover
+{
+    cursor: pointer;
+}
+
+#verificationimg
+{
+    width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+}
+/* last sub */
+
+#sub_box
+{
+    width: 100%;
+    position: fixed;
+    bottom: 0%;
+    display: flex;
+    justify-content: center;
+}
+
+#sub_box>div
+{
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    height: 70px;
+    background-color: #691a47;
+    align-items: center;
+    border-radius: 3px;
+}
+
+
+
+#st4bttn button
+{
+    height: 40px;
+    width: 150px;
+    margin-right: 10px;
+    border-radius: 20px;
+    border: none;
+    font-size: 16px;
+}
+
+#st4bttn button:hover
+{
+    cursor: pointer;
+}
+#st4bttn button:nth-child(2):hover{
+    color: green;
+}
+#st4bttn button:nth-child(3):hover{
+    color: red;
+}
+
+</style>
+<body>   
+    <div id="fr_nav">
+        <div id="fr_nav_left">
+            <img id="fr_logo" src="https://assets.milaap.org/assets/milaap-logo-tiny-4d3dbc4e55c2aaec351f0f376329c624236c4d6266b910f472684e70603f600d.png" alt="logo">
+            <h3>Setup fundraiser</h3>
+        </div>
+        <div id="fr_nav_step">
+            <p>Step 4 </p>
+            <p> of 4</p>
+        </div>
+    </div>
+    <div id="fr_mid_3">
+        <div id="fr_top_title">
+            <p>Verification</p>
+        </div>
+    </div>
+    <table id="tablebx" class="table">
+    </table>
+    <div id="sub_box">
+        <div id="st4bttn">
+            <a href="./fundraise_pg-3.html"><button>Back</button></a>
+            <button id="frs4continue" onclick="verify(event)">Verify</button>
+            <button id="returnto1" onclick="tofundraise_pg1()">Cancel</button>
+        </div> 
+        </form>
+    </div>
+    <div id="overlay"></div>
+    <div class="popinput" id="popinput">
+        <div>
+            <h3 id="vertext"></h3>
+            <img id="verificationimg" src="https://media3.giphy.com/media/swhRkVYLJDrCE/giphy.gif?cid=790b7611321f5d64b86f4ed1a0c9bbaf4d9ff348668fb439&rid=giphy.gif&ct=g" alt="">
+        </div>  
+        <button id="verpop" onclick="tohome()">OK</button> 
+    </div>
+</body>
+<script>
+
+let sele = JSON.parse(localStorage.getItem("step1data"))
+let sl = sele.section
+let data = JSON.parse(localStorage.getItem("causedata"))
+
+let tablebox = document.getElementById("tablebx")
+let tblbdy = document.createElement("tbody")
+// let i = 1
+for(let k in data)
+{
+    let trow = document.createElement("tr")
+    let tr1 = document.createElement("th")
+    tr1.classList = "tr1b"
+    tr1.style.fontWeight="bold"
+    // tr1.innerText = i
+
+    let td1 = document.createElement("td")
+    td1.classList="td1t"
+    td1.innerText = k
+    let td2 = document.createElement("td")
+    td2.classList = "td2long"
+
+    if(k =="image" || k =="formur")
+    {
+
+        
+        let image = document.createElement("img")
+        image.classList = "verimg"
+        image.src = data[k]
+        td2.append(image)
+    }
+    else
+    {
+        td2.innerText = data[k]
+    }
+  
+
+    trow.append(tr1,td1,td2)
+
+    tblbdy.append(trow)
+    // i++
+}
+
+tablebox.append(tblbdy)
+
+function verify(e)
+{
+    e.preventDefault()
+    if(sl=="medical")
+    {
+        console.log(1)
+        let meddata = JSON.parse(localStorage.getItem("medical"))||[]
+        meddata.push(data)
+        localStorage.setItem("medical",JSON.stringify(meddata))
+    }
+
+    if(sl=="education")
+    {
+        console.log(2)
+        let eddata = JSON.parse(localStorage.getItem("education"))||[]
+        eddata.push(data)
+        localStorage.setItem("education",JSON.stringify(eddata))
+    }
+
+    if(sl=="memorial")
+    {
+        console.log(3)
+        let memdata = JSON.parse(localStorage.getItem("memorial"))||[]
+        memdata.push(data)
+        localStorage.setItem("memorial",JSON.stringify(memdata))
+    }
+
+    if(sl=="other")
+    {
+        console.log(4)
+        let otdata = JSON.parse(localStorage.getItem("other"))||[]
+        otdata.push(data)
+        localStorage.setItem("other",JSON.stringify(otdata))
+    }
+
+    let s = 0
+    setInterval(function()
+    {
+        let text = document.getElementById("vertext")
+        if(s==2)
+        {
+            text.innerText = "This might take few seconds"
+        }
+        if(s==6)
+        {
+            text.innerText = "Verification Completed"
+            let img = document.getElementById("verificationimg")
+            img.src = "https://c.tenor.com/xVfFIHxAzW4AAAAC/success.gif"
+
+        }
+
+        s++
+    },1000)
+
+    let overlay = document.getElementById("overlay")
+    overlay.style.display = "block"
+    popinput.classList.add("open-popinput")
+
+}
+
+function tohome()
+{
+    window.location.href="fundraise_pg-1.html"
+    //  window.location.href="../index.html"
+}
+
+function tofundraise_pg1()
+{
+    window.location.href="./fundraise_pg-1.html"
+}
+</script>
+</html>
