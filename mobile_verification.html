@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #762b4b;
+        }
+        *{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+         #big_div{
+            width: 70%;
+            height: 500px;
+            margin: auto;
+            margin-top: 100px;
+            display: flex;
+            background-color: white;
+            border-radius: 20px;
+        }
+        #logo_div{
+            width: 20%;
+            text-align: center;
+            margin-left: 40px;
+        }
+        #check{
+            width: 100px;
+            height: 100px;
+            background-color: #983252;
+            border-radius: 50%;
+            margin: auto;
+            margin-top: 70%;
+            position: relative;
+        }
+        #check>img{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 30%;
+            left: 30%;
+        }
+        #mbl_verify {
+            width: 70%;
+            margin: auto;
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        #mbl_verify>button {
+            display: block;
+            width: 50%;
+            height: 40px;
+            border: none;
+            margin-left: 27%;
+            margin-top: 30px;
+        }
+
+        input {
+            display: block;
+            width: 50%;
+            height: 30px;
+            margin-left: 27%;
+            margin-top: 30px;
+            border-top-style: hidden;
+            border-right-style: hidden;
+            border-left-style: hidden;
+            border-bottom-style: ridge;
+            cursor: text;
+        }
+        input:focus{
+            outline: none;
+        }
+        label{
+            margin-left: 27%;
+            margin-top: 30px;
+        }
+        #ot{
+            position: absolute;
+            top: 41%;
+        }
+        #otp:focus+label {
+            font-size: 14px;
+            top: 36%;
+        }
+        #veri{
+            background-color: #983252;
+            color: white;
+            border-radius: 20px;
+        }
+        #skip{
+            display: block;
+            width: 50%;
+            height: 40px;
+            border: none;
+            margin-left: 48%;
+            margin-top: 40px;
+            text-decoration: none;
+            color: #983252;
+        }
+        .con{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="big_div">
+        <div id="logo_div">
+            <div id="check">
+                <img src="https://assets.milaap.org/assets/milaap-trasparent-logo-25f6253e0156e2f82e2c3daf85575d169864e35ffffd21033ac59da0b4dd88e0.png" alt="" id="">
+            </div>
+            <h3>Welcome to Milaap,</h3>
+            <p>India’s largest crowdfunding site</p>
+        </div>
+        <div id="mbl_verify">
+            <div class="con">
+                <img src="https://assets.milaap.org/assets/user_management/phone-logo-ac51ef4dd8340206fdb93a5c7dd77687f3778882557865966f33c0742f9a70d9.png" alt="">
+                <p>Verify your mobile number and receive priority support just anytime</p>
+            </div>
+            <input type="number" placeholder="Phone number" id="mobile">
+            <input type="password" id="otp">
+            <label for="otp" id="ot">OTP</label>
+            <button id="verify">Verify</button>
+            <a href="login.html" id="skip">Skip for now</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    let signupdata = JSON.parse(localStorage.getItem("data1")) || [];
+
+    document.getElementById("verify").addEventListener("click", () => {
+
+        let mbl = document.getElementById("mobile").value;
+        let otpin = document.getElementById("otp").value;
+        if (otpin == "12345") {
+            for (let i = signupdata.length - 1; i < signupdata.length; i++) {
+                signupdata[i].mbl = Number(mbl);
+            }
+            localStorage.setItem("data1", JSON.stringify(signupdata));
+            window.location.href="login.html"
+        } else {
+            alert("wrong otp");
+            document.getElementById("otp").value = null;
+            return;
+        }
+        document.getElementById("mobile").value = null;
+        document.getElementById("otp").value = null;
+
+    })
+
+</script>

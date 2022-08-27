@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #762b4b;
+        }
+        *{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #big_div{
+            width: 70%;
+            height: 500px;
+            margin: auto;
+            margin-top: 100px;
+            display: flex;
+            background-color: white;
+            border-radius: 20px;
+        }
+        #logo_div{
+            width: 20%;
+            text-align: center;
+            margin-left: 40px;
+        }
+
+        #form_display {
+            width: 80%;
+            margin: auto;
+            position: relative;
+        }
+        input {
+            display: block;
+            width: 50%;
+            height: 30px;
+            margin-left: 27%;
+            margin-top: 30px;
+            border-top-style: hidden;
+            border-right-style: hidden;
+            border-left-style: hidden;
+            border-bottom-style: ridge;
+            cursor: text;
+        }
+        label{
+            margin-left: 27%;
+            cursor: text;
+        }
+        #form_display>button{
+            display: block;
+            width: 50%;
+            height: 40px;
+            margin-left: 27%;
+            margin-top: 30px;
+            border-radius: 20px;
+            background-color: #983252;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #mail{
+            position: absolute;
+            top: 24%;
+        }
+        #pass{
+            position: absolute;
+            top: 39%;
+        }
+        #email:focus+label,
+        #email:valid+label{
+            font-size: 14px;
+            top: 19%;
+        }
+        #password:focus+label,
+        #password:valid+label{
+            font-size: 14px;
+            top: 35%;
+        }
+        
+        input:focus{
+            outline: none;
+        }
+        .con{
+            width: 40%;
+            text-align: center;
+            margin: auto;
+        }
+        .con>p{
+            display: inline;
+        }
+        #con1{
+            margin-top: 100px;
+            width: 55%;
+        }
+        .con button{
+            background-color: #983252;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 30%;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .con div{
+            margin-top: 20px;
+        }
+        #con1 button{
+            width: 20%;
+        }
+        #check{
+            width: 100px;
+            height: 100px;
+            background-color: #983252;
+            border-radius: 50%;
+            margin: auto;
+            margin-top: 70%;
+            position: relative;
+        }
+        #check>img{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 30%;
+            left: 30%;
+        }
+        #form_display>a{
+            display: block;
+            margin-left: 45%;
+            text-decoration: none;
+            color: #983252;
+            margin-top: 20px;
+            
+        }
+        #fb{
+            background-color: #3b5998;
+        }
+        #fg{
+            background-color: #dd4b39;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div id="big_div">
+        <div id="logo_div">
+            <div id="check">
+                <img src="https://assets.milaap.org/assets/milaap-trasparent-logo-25f6253e0156e2f82e2c3daf85575d169864e35ffffd21033ac59da0b4dd88e0.png" alt="" id="">
+            </div>
+            <h3>Welcome to Milaap,</h3>
+            <p>India’s largest crowdfunding site</p>
+        </div>
+        <div id="form_display">
+            <div class="con">
+                <p>Quickly login using</p>
+                <div>
+                    <button id="fb">Facebook</button>
+                    <button id="fg">Google</button>
+                </div>
+            </div>
+            <input type="text" id="email" required>
+            <label for="email" id="mail">Mobile Number / Email ID</label>
+            <input type="password" id="password" required>
+            <label for="password" id="pass">Password</label>
+            <button id="login_data">Login</button>
+            <a href="#">Forgot Password?</a>
+            <div class="con" id="con1">
+                <p>New to Milaap? Sign up now, it’s quick & free </p>
+                <button id="sgnup">Sign up</button>
+            </div>
+        </div>
+    </div>
+    
+
+
+</body>
+
+</html>
+
+<script>
+
+    document.getElementById("login_data").addEventListener("click", getdata)
+
+    let logindata = JSON.parse(localStorage.getItem("data1")) || [];
+    let logornot=JSON.parse(localStorage.getItem("loginstatus"))||false;
+
+
+    function getdata(event) {
+        event.preventDefault();
+
+        let data = {
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value,
+
+        }
+        if(checklogin(data.email,data.password)===true){
+            console.log("in")
+            alert("login successful")
+            window.location.href="myprofile.html"
+        }else{
+            console.log("out")
+            alert("failed")
+        }
+        document.getElementById("email").value = null;
+        document.getElementById("password").value = null;
+
+    }
+
+    function checklogin(email,pass){
+        let filtered=logindata.filter((el)=>{
+            if(el.email==email&&el.password==pass){
+                logornot=true;
+                localStorage.setItem("loginstatus",JSON.stringify(logornot))
+                localStorage.setItem("succ",JSON.stringify(el));
+                
+            }
+            return el.email==email&&el.password==pass;
+        });
+        if(filtered.length>0){
+            return true;
+        }else{
+            return false;
+        }
+    };
+
+    document.getElementById("sgnup").addEventListener("click",()=>{
+        window.location.href="signup.html"
+    })
+</script>

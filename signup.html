@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #762b4b;
+        }
+        *{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #big_div{
+            width: 70%;
+            height: 500px;
+            margin: auto;
+            margin-top: 100px;
+            display: flex;
+            background-color: white;
+            border-radius: 20px;
+        }
+        #logo_div{
+            width: 20%;
+            text-align: center;
+            margin-left: 40px;
+        }
+
+        #form_display {
+            width: 80%;
+            margin: auto;
+            position: relative;
+        }
+        input {
+            display: block;
+            width: 50%;
+            height: 30px;
+            margin-left: 27%;
+            margin-top: 30px;
+            border-top-style: hidden;
+            border-right-style: hidden;
+            border-left-style: hidden;
+            border-bottom-style: ridge;
+            cursor: text;
+        }
+        label{
+            margin-left: 27%;
+            cursor: text;
+        }
+        #form_display>button{
+            display: block;
+            width: 50%;
+            height: 40px;
+            margin-left: 27%;
+            margin-top: 30px;
+            border-radius: 20px;
+            background-color: #983252;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #nam{
+            position: absolute;
+            top: 14%;
+        }
+        #mail{
+            position: absolute;
+            top: 29%;
+        }
+        #pass{
+            position: absolute;
+            top: 45%;
+        }
+        #name:focus+label,
+        #name:valid+label{
+            font-size: 14px;
+            top: 9%;
+        }
+        #email:focus+label,
+        #email:valid+label{
+            font-size: 14px;
+            top: 24%;
+        }
+        #password:focus+label,
+        #password:valid+label{
+            font-size: 14px;
+            top: 40%;
+        }
+        
+        input:focus{
+            outline: none;
+        }
+        .con{
+            width: 40%;
+            text-align: center;
+            margin: auto;
+        }
+        .con>p{
+            display: inline;
+        }
+        #con1{
+            margin-top: 100px;
+        }
+        .con button{
+            background-color: #983252;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 30%;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        #check{
+            width: 100px;
+            height: 100px;
+            background-color: #983252;
+            border-radius: 50%;
+            margin: auto;
+            margin-top: 70%;
+            position: relative;
+        }
+        #check>img{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 30%;
+            left: 30%;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div id="big_div">
+        <div id="logo_div">
+            <div id="check">
+                <img src="https://assets.milaap.org/assets/milaap-trasparent-logo-25f6253e0156e2f82e2c3daf85575d169864e35ffffd21033ac59da0b4dd88e0.png" alt="" id="">
+            </div>
+            <h3>Welcome to Milaap,</h3>
+            <p>India’s largest crowdfunding site</p>
+        </div>
+        <div id="form_display">
+            <div class="con">
+                <p>Sign up & manage fundraisers, donations & more</p>
+            </div>
+            <input type="text" id="name" required>
+            <label for="name" id="nam">Full name</label>
+            <input type="text" id="email" required>
+            <label for="email" id="mail">Email</label>
+            <input type="password" id="password" required>
+            <label for="password" id="pass">Password</label>
+            <button id="signup_data">Sign up</button>
+            <div class="con" id="con1">
+                <p>Already signed up with Milaap?</p>
+                <button id="lgin">Login</button>
+            </div>
+        </div>
+    </div>
+    
+
+
+</body>
+
+</html>
+
+<script>
+
+    document.getElementById("signup_data").addEventListener("click", getdata)
+
+    let signupdata = JSON.parse(localStorage.getItem("data1")) || [];
+
+    function getdata(event) {
+        event.preventDefault();
+        
+        let data = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value,
+            id:Date.now(),
+
+        }
+        if (checkusername(data.email) === true) {
+            signupdata.push(data);
+            localStorage.setItem("data1", JSON.stringify(signupdata))
+            alert("added");
+            window.location.href = "mobile_verification.html"
+        } else {
+            alert("Email already exist")
+        }
+        document.getElementById("name").value = null;
+        document.getElementById("email").value = null;
+        document.getElementById("password").value = null;
+
+    }
+
+    function checkusername(email) {
+        let filtered = signupdata.filter((el) => {
+            return email == el.email;
+        });
+        if (filtered.length > 0) {
+            return false;
+        } else {
+            return true;
+        }
+    };
+
+    document.getElementById("lgin").addEventListener("click",()=>{
+        window.location.href="login.html"
+    })
+</script>

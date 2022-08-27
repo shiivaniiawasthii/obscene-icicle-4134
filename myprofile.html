@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <style>
+        *{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #nav{
+            height: 100px;
+            border: 1px solid black;
+        }
+        .first_div{
+            width: 50%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .first_div>div:nth-child(1){
+            width: 30%;
+        }
+        .first_div>div:nth-child(1)>p{
+            margin-top: 50px;
+        }
+        .first_div>div:nth-child(2){
+            width: 70%;
+        }
+        input{
+            display: block;
+            margin-top: 50px;
+            width: 70%;
+            border: 0.1px solid gray;
+            border-top-style: hidden;
+            border-right-style: hidden;
+            border-left-style: hidden;
+            border-bottom-style: ridge;
+            cursor: text;
+            
+        }
+        input:focus{
+            outline: none;
+            border-bottom-color: aqua;
+        }
+        hr{
+            width: 60%;
+            margin-left: 20%;
+            margin-top: 80px;
+        }
+        #fa{
+            margin-left: 24%;
+        }
+        
+        #save{
+           display: block;
+           width: 50%;
+           margin-top: 80px;
+           padding-top: 10px;
+           padding-bottom: 10px;
+           border-radius: 20px;
+           background-color: #9c3353;
+           color: white;
+           border: none;
+           font-weight: bold;
+           font-size: 16px;
+           cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav"></div>
+    <h1 id="fa"><i class="fa-regular fa-pen-to-square"></i> Edit Profile</h1>
+    <div class="first_div">
+       <div>
+        <p>First name</p>
+        <p>Last name</p>
+        <p>Preferred currency</p>
+        <p>Registered Email</p>
+        <p>Alternate email</p>
+        <p>Phone number</p>
+       </div>
+       <div>
+        <input type="text" id="fn"><input type="text" id="ln"><input type="text" id="curr"><input type="text" id="rem">
+        <input type="text" id="aem"><input type="text" id="pn">
+       </div> 
+    </div>
+    <hr>
+    <div class="first_div">
+        <div>
+         <p>Pan card no</p>
+         <p>Name as in pan card</p>
+         <p>Address line 1</p>
+         <p>Address line 2</p>
+         <p>City</p>
+         <p>State</p>
+        </div>
+        <div>
+         <input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text">
+         <button id="save"><i class="fa-regular fa-floppy-disk"></i> Save</button>
+        </div> 
+     </div>
+    
+</body>
+</html>
+<script>
+
+let totaldata = JSON.parse(localStorage.getItem("data1")) || [];
+let loggeddata= JSON.parse(localStorage.getItem("succ")) || [];
+let n=totaldata.length
+
+window.addEventListener("load",()=>{
+    inputdata();
+})
+
+function trythis(){
+for(let i in loggeddata){
+    if(i=="email"){
+        return loggeddata[i]
+    }
+}}
+
+function inputdata(){
+    let x=trythis();
+let single=totaldata.filter((el)=>{
+    return el.email==x
+});
+for(let i in single){
+    let split_name=single[i].name.split(" ");
+    if(split_name.length==1){
+    document.getElementById("fn").value=split_name[0];
+    }else{
+        document.getElementById("fn").value=split_name[0];
+        document.getElementById("ln").value=split_name[split_name.length-1];
+    }
+    if(single[i].email){
+    document.getElementById("rem").value=single[i].email;
+    }
+    if(single[i].alternate_email){
+    document.getElementById("aem").value=single[i].alternate_email;
+    }
+    if(single[i].mbl){
+    document.getElementById("pn").value=single[i].mbl;
+    }
+}
+}
+
+
+document.getElementById("save").addEventListener("click",updatedata);
+
+function updatedata(){
+    let fname=document.getElementById("fn").value;
+    let lname=document.getElementById("ln").value;
+    let curr=document.getElementById("curr").value;
+    let rem=document.getElementById("rem").value;
+    let aem=document.getElementById("aem").value;
+    let pn=document.getElementById("pn").value;
+
+    
+
+    for(let i=0;i<n;i++){
+        let x=getid();
+        let y=trythis();
+        if(totaldata[i].id==x){
+            totaldata[i].name=`${fname} ${lname}`;
+            totaldata[i].mbl=Number(pn);
+            if(aem===rem){
+                alert("Same as registered Email id")
+            }else if(aem!==rem){
+            if(checkemail(aem)===true){
+                    totaldata[i].alternate_email=aem;
+                    localStorage.setItem("succ",JSON.stringify(totaldata[i]));
+                    localStorage.setItem("data1", JSON.stringify(totaldata));
+                }else{
+                    alert("Email already exist");
+                }
+            }
+            if(rem==y){
+                totaldata[i].email=rem;
+                localStorage.setItem("succ",JSON.stringify(totaldata[i]));
+                localStorage.setItem("data1", JSON.stringify(totaldata));
+            }else if(rem!==y){
+                if(checkemail(rem)===true){
+                    totaldata[i].email=rem;
+                    localStorage.setItem("succ",JSON.stringify(totaldata[i]));
+                    localStorage.setItem("data1", JSON.stringify(totaldata));
+                }else{
+                    alert("Email already exist");
+                }
+            }
+        }
+        
+    }
+    window.location.reload();
+
+
+}
+
+function checkemail(mailid){
+    let filtered=totaldata.filter((el)=>{
+        return mailid===el.email
+    });
+    if(filtered.length>0){
+        return false;
+    }else{
+        return true;
+    }
+}
+
+function getid(){
+for(let i in loggeddata){
+    if(i=="id"){
+        return loggeddata[i]
+    }
+}}
+
+
+
+
+
+
+
+</script>
