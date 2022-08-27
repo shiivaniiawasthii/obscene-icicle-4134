@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Fundraiser</title>
+    <style>
+        body
+{
+    font-family: 'Poppins', sans-serif;
+    margin: 0%;
+    text-align: center;
+
+    
+}
+
+#fr_nav_step
+{
+    display: flex;
+}
+
+#fr_nav_step>p:first-child
+{
+    margin-right: 5px;
+    color: green;
+}
+#fr_nav_left
+{
+    display: flex;
+    align-items: center;
+}
+#fr_nav_left>h3
+{
+    font-weight: 400;
+    align-items: center;
+}
+
+#fr_nav
+{
+    display: flex;
+    position: relative;
+    z-index: 1;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 7%;
+    padding-right: 7%;
+    box-shadow: rgba(223, 56, 56, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+    margin-bottom: 0%;
+}
+
+#fr_Medical
+{
+    background-color: #691a47;
+}
+
+.fr_select_p
+{
+    font-weight: 300;
+    font-size: 13px;
+}
+
+#fr_cause_medical_p
+{
+    color: white;
+}
+
+#fr_logo
+{
+    height: 40px;
+    width: 100px;
+    margin-top: -6px;
+    margin-right: 30px;
+}
+
+
+/* midsection */
+
+
+
+#fr_mid2
+{
+
+    display: grid;
+    grid-template-columns: repeat(1,auto);
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+#fr_top_title
+{
+    margin: auto;
+    margin-bottom: 60px;
+    width: 200px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background-color: rgb(235, 235, 235);
+    box-shadow: rgba(207, 91, 91, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+select
+{
+    width: 200px;
+    padding: 10px;
+    border: none;
+    background-color: #691a47;
+    color: white;
+    border-radius: 3px;
+    margin-bottom: 30px;
+}
+option{
+    display: flex;
+    margin-top: 20%;
+}
+
+input
+{
+    width: 460px;
+    padding-top: 10px;
+    border: none;
+    border-bottom: 1px solid rgb(190, 190, 190);
+    margin-bottom: 25px;
+    outline: none;
+    padding-bottom: 10px;
+
+}
+
+#fr_form_div
+{
+    width: 500px;
+}
+
+#individual_form
+{
+    display: none;
+}
+#group_form
+{
+    display: none;
+}
+
+
+
+
+
+
+
+
+/* lastsub */
+
+
+#sub_box
+{
+    width: 100%;
+    position: fixed;
+    bottom: 0%;
+    display: flex;
+    justify-content: center;
+}
+
+#sub_box>div
+{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    height: 70px;
+    background-color: #691a47;
+    align-items: center;
+    border-radius: 3px;
+}
+#profile{
+        width: 40%;
+        margin: auto;
+        color: gray;
+    }
+    #profile img{
+        width: 30%;
+        border: 1px solid #9c3353;
+        margin-top: 10px;
+        border-radius: 34px;
+        position: relative;
+        z-index: -1;     
+    }
+    #plus{
+        width: 5%;
+        height: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        border: 1px solid #9c3353;
+        background-color: #9c3353;
+        color: white;
+        padding: 8px;
+        font-size: 19px;
+        margin-top: -30px;
+        margin-left: 54%;
+        position: relative;
+        z-index: -1;
+        border-radius: 150px;
+    }
+
+#continue
+{
+    height: 40px;
+    width: 150px;
+    margin-right: 10px;
+    border-radius: 20px;
+    border: none;
+    font-size: 20px;
+}
+
+#continue:hover
+{
+    cursor: pointer;
+}
+#back{
+    background-color: transparent;
+    color: white;
+    margin-left: 20px;
+    font-size: 20px;
+    text-decoration: underline;
+    margin-right: 10px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+#gender{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+#gender div{
+padding: 5px 10px;
+width: 10%;
+border: 1px solid gray;
+background-color: aliceblue;
+cursor: pointer;
+}
+    </style>
+</head>
+<body> 
+    <div id="fr_nav">
+        <div id="fr_nav_left">
+            <img id="fr_logo" src="https://assets.milaap.org/assets/milaap-logo-tiny-4d3dbc4e55c2aaec351f0f376329c624236c4d6266b910f472684e70603f600d.png" alt="logo">
+            <h3>Setup fundraiser</h3>
+        </div>
+        <div id="fr_nav_step">
+            <p>Step 2 </p>
+            <p> of 4</p>
+        </div>
+    </div>  
+
+    <div id="fr_mid2">
+        <div id="fr_top_title">
+            <p>Beneficiary Details</p>
+        </div>
+        <div>
+
+            <select onchange="benifical_option()" name="" id="ben_selection">
+                <option value="Myself">Myself</option>
+                <option value="Individual">Individual</option>
+                <option value="Group">Group</option>
+            </select>
+
+            <div id="fr_form_div">
+                <div id="profile">
+                    <img src="https://png.pngitem.com/pimgs/s/130-1300400_user-hd-png-download.png" alt="">
+                    <p onclick="userImage()" id="plus">+</p>
+                </div>
+                <form id="myself_form">
+                    <input id="mydispic" type="url" placeholder="Display photo URL">
+                    <input id="myname" type="text" placeholder="Name">
+                    <input id="myage" type="text" placeholder="Age">
+                    <div id="gender">
+                        <div id="male" onclick="male()">Male</div>
+                        <div id="female" onclick="female()">Female</div>
+                        <div id="others" onclick="others()">Others</div>
+                    </div>
+                    <input id="myreside" type="text" placeholder="Residing in">
+                </form>
+
+                <form id="individual_form">
+                    <input id="inddispic" type="url" placeholder="Beneficiary's photo URL">
+                    <input id="indrelation" type="text" placeholder="Relation">
+                    <input id="indrelname" type="text" placeholder="Relative's Name">
+                    <input id="indage" inputmode="numeric" minlength="1" maxlength="3" placeholder="Age">
+                    <input id="indresid" type="text" placeholder="Residing in">
+                    <input id="indnum" inputmode="numeric" minlength="10" maxlength="10" placeholder="Beneficiary's Mobile no">
+                </form>
+
+                <form id="group_form">
+                    <input id="grpdispic" type="url" placeholder="Organisation photo URL">
+                    <input id="grpname" type="text" placeholder="Name">
+                    <input id="grpposition" type="text" placeholder="Position">
+                    <input id="grplocation" type="text" placeholder="Location">
+                    <input id="grppernum" inputmode="numeric" minlength="10" maxlength="10" placeholder="Personal contact no">
+                    <input id="grporgnum" inputmode="numeric" minlength="10" maxlength="10" placeholder="Organisation contact no">
+                </form>
+
+            </div>
+        </div>
+        <div id="sub_box">
+            <div>
+               <a href="./fundraise_pg-1.html"><button id="back">Back</button></a> 
+                <button onclick="Continue()" id="continue">Continue</button>
+            </div> 
+    </div>
+</body>
+<script>
+
+let fr_type = "Myself"
+function benifical_option()
+{
+    fr_type = document.getElementById("ben_selection").value
+    if(fr_type == "Myself")
+    {
+        let formselct1 = document.getElementById("myself_form")
+        formselct1.style.display="block"
+        let formselct2 = document.getElementById("individual_form")
+        formselct2.style.display="none"
+        let formselct3 = document.getElementById("group_form")
+        formselct3.style.display="none"
+    }
+    if(fr_type == "Individual")
+    {
+        let formselct1 = document.getElementById("myself_form")
+        formselct1.style.display="none"
+        let formselct3 = document.getElementById("group_form")
+        formselct3.style.display="none"
+        let formselct2 = document.getElementById("individual_form")
+        formselct2.style.display="block"
+      
+    }
+    if(fr_type == "Group")
+    {
+        let formselct1 = document.getElementById("myself_form")
+        formselct1.style.display="none"
+        let formselct2 = document.getElementById("individual_form")
+        formselct2.style.display="none"
+        let formselct3 = document.getElementById("group_form")
+        formselct3.style.display="block"
+    }
+}
+class benificiarymydata
+{
+    constructor(d,n,a,r)
+    {
+        this.name = n
+        this.displaypic = d 
+        this.age = a 
+        this.residence = r 
+    }
+}
+
+class benificiaryinddata
+{
+    constructor(rel,relname,d,a,r,num)
+    {
+        this.relation = rel 
+        this.relative_s_name=relname 
+        this.displaypic = d 
+        this.age = a 
+        this.residence = r 
+        this.beneficiary_s_number = num 
+    }
+}
+
+class benificiarygrpdata
+{
+    constructor(dis,name,pos,loc,gnum,pnum)
+    {
+        this.displaypic = dis
+        this.groupname = name
+        this.position = pos
+        this.location = loc
+        this.personalnumber = pnum
+        this.groupnumber = gnum
+    }
+}
+
+function Continue()
+{
+    if(fr_type == "Myself")
+    {
+        let dispic = document.getElementById("mydispic").value
+        let name = document.getElementById("myname").value
+        let age = document.getElementById("myage").value
+        let reside = document.getElementById("myreside").value
+        console.log(dispic)
+        if(dispic==""|| name==""||age==""||reside=="")
+        {
+            alert("Please fill all the details")
+        }
+        else
+        {
+            let data = new benificiarymydata(dispic,name,age,reside)
+            localStorage.setItem("beneficiarymydetails",JSON.stringify(data))
+            alert("Step 2 Completed")
+            window.location.href="fundraise_pg-3.html"
+        }
+        
+    }
+    if(fr_type == "Individual")
+    {
+        let dispic = document.getElementById("inddispic").value
+        let relation =  document.getElementById("indrelation").value
+        let relativesname = document.getElementById("indrelname").value
+        let age = document.getElementById("indage").value
+        let reside = document.getElementById("indresid").value
+        let num = document.getElementById("indnum").value
+        
+        if(dispic=="" || relation=="" || relativesname == "" || age =="" || reside=="" || num =="")
+        {
+            alert("Please fill all the details")
+        }
+        else
+        {
+            let data = new benificiaryinddata(relation,relativesname,dispic,age,reside,num)
+            localStorage.setItem("beneficiaryinddetails",JSON.stringify(data))
+            alert("Step 2 Completed")
+            window.location.href="fundraise_pg-3.html"
+        }
+        
+    }
+    if(fr_type == "Group")
+    {
+        let dispic = document.getElementById("grpdispic").value
+        let position =  document.getElementById("grpposition").value
+        let gname = document.getElementById("grpname").value
+        let gcontact = document.getElementById("grporgnum").value
+        let location = document.getElementById("grplocation").value
+        let gpersonalnum = document.getElementById("grppernum").value
+        
+        if(dispic=="" || position=="" || gname=="" || gcontact=="" || location=="" || gpersonalnum=="")
+        {
+            alert("Please fill all the details")
+        }
+        else
+        {
+            let data = new benificiarygrpdata(dispic,gname,position,location,gpersonalnum,gcontact)
+            localStorage.setItem("beneficiaryinddetails",JSON.stringify(data))
+            alert("Step 2 Completed")
+            window.location.href="fundraise_pg-3.html"
+        }
+        
+    }
+}
+ 
+let user = document.getElementById("plus")
+
+function userImage(){
+    user.onclick = () =>{
+    window = "https://unsplash.com/s/photos/user"
+    }
+}
+
+let select_btn1 = document.getElementById("male")
+let select_btn2 = document.getElementById("female")
+let select_btn3 = document.getElementById("others")
+
+
+function male(){
+    select_btn1.style.backgroundColor = "#9c3353"
+    select_btn2.style.backgroundColor = "white"
+    select_btn3.style.backgroundColor = "white"
+    select_btn1.style.color = "white"
+    select_btn2.style.color = "black"
+    select_btn3.style.color = "black"
+
+}
+
+function female(){
+    select_btn1.style.backgroundColor = "white"
+    select_btn2.style.backgroundColor = "#9c3353"
+    select_btn3.style.backgroundColor = "white"
+    select_btn2.style.color = "white"
+    select_btn1.style.color = "black"
+    select_btn3.style.color = "black"
+}
+
+function others(){
+    select_btn1.style.backgroundColor = "white"
+    select_btn2.style.backgroundColor = "white"
+    select_btn3.style.backgroundColor = "#9c3353"
+    select_btn3.style.color = "white"
+    select_btn2.style.color = "black"
+    select_btn1.style.color = "black"
+}
+</script>
+</html>
