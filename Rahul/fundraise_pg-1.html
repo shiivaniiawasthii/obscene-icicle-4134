@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>New Fundraiser</title>
+</head>
+<style>
+    body
+{
+    font-family: 'Poppins', sans-serif;
+    margin: 0%;
+    text-align: center;
+    
+}
+
+#fr_nav_step
+{
+    display: flex;
+}
+
+#fr_nav_step>p:first-child
+{
+    margin-right: 5px;
+    color: green;
+}
+#fr_nav_left
+{
+    display: flex;
+    align-items: center;
+}
+#fr_nav_left>h3
+{
+    font-weight: 400;
+    align-items: center;
+}
+
+#fr_nav
+{
+    display: flex;
+    position: relative;
+    z-index: 1;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 7%;
+    padding-right: 7%;
+    box-shadow: rgba(221, 98, 98, 0.27) 0px 0px 0.25em, rgba(215, 93, 116, 0.05) 0px 0.25em 1em;
+    margin-bottom: 0%;
+}
+
+#fr_Medical
+{
+    background-color: #691a47;
+}
+
+.fr_select_p
+{
+    font-weight: 300;
+    font-size: 13px;
+}
+
+#fr_cause_medical_p
+{
+    color: white;
+}
+
+#fr_logo
+{
+    height: 40px;
+    width: 100px;
+    margin-top: -6px;
+    margin-right: 30px;
+}
+
+/* mid section */
+
+#fr_main
+{
+
+    display: grid;
+    grid-template-columns: repeat(1,auto);
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+#fr_top_title
+{
+    margin: auto;
+    margin-bottom: 60px;
+    width: 200px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background-color: rgb(235, 235, 235);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+#fr_cause_box
+{
+    width: 100%;
+    text-align: center;
+}
+
+#fr_cause
+{
+    display: flex;
+    justify-content: center;
+}
+
+#fr_cause>h5
+{
+    margin-right: 5px;
+    font-weight: 400;
+}
+
+#fr_cause_selection
+{
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    gap: 10px;
+    padding: 25px;
+    border-radius: 3px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    margin-bottom: 60px;
+}
+
+#fr_cause_selection>div
+{
+    display: flex;
+    width: 150px;
+    padding: 15px;
+    padding-left: 30px;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    align-items: center;
+}
+#fr_cause_selection>div:hover
+{
+    cursor: pointer;
+}
+
+#fr_cause_selection>div>p
+{
+    margin: 0%;
+    margin-left: 20px;
+}
+
+#fr_form_box>#fr_form>input
+{
+    width: 460px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid rgb(190, 190, 190);
+    margin-bottom: 25px;
+    outline: none;
+}
+
+.fr_num
+{
+    border: none;
+    outline: none;
+}
+
+#fr_phonenum
+{
+    width: 410px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(238, 238, 238);
+    width: 25px;
+    height: 20px;
+    padding-top: 5px;
+    border-radius: 3px;
+}
+
+hr
+{
+    margin: 0%;
+    border: none;
+    border: .5px solid rgb(190, 190, 190);
+}
+
+#sub_box
+{
+    width: 100%;
+    position: fixed;
+    bottom: 0%;
+    display: flex;
+    justify-content: center;
+}
+
+#sub_box>div
+{
+    display: flex;
+    justify-content: end;
+    width: 60%;
+    height: 70px;
+    background-color: #691a47;
+    align-items: center;
+    border-radius: 3px;
+   
+}
+
+#sub_box>div>input
+{
+    height: 40px;
+    width: 150px;
+    margin-right: 10px;
+    border-radius: 20px;
+    border: none;
+}
+
+
+#sub_box>div>input:hover
+{
+    cursor: pointer;
+}
+
+
+
+.popinput
+{
+    text-align: center;
+    background-color: white;
+    padding: 60px 30px;
+    border-radius: 5px;
+    border: 1px solid rgb(213, 213, 213);
+    position: fixed;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%,-50%)scale(0.1);
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s ease-in-out;
+}
+
+.correct
+{
+    background-color: white;
+    width: 330px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: white;
+    padding: 0px 30px;
+    border: 1px solid rgb(213, 213, 213);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    transform: translate(-50%,-50%)scale(1);
+    display: none;
+}
+
+.wrong
+{
+    background-color: white;
+    width: 330px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: white;
+    padding: 0px 30px;
+    border: 1px solid rgb(213, 213, 213);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    transform: translate(-50%,-50%)scale(1);
+    display: none;
+}
+
+.wrong>img
+{
+    width: 100px;
+    margin-top: -50px;
+    margin-bottom: 30px;
+}
+
+.correct>img
+{
+    width: 100px;
+    margin-top: -50px;
+    margin-bottom: 30px;
+}
+
+.wrong>button
+{
+    margin-bottom: 40px;
+}
+
+.correct>button
+{
+    margin-bottom: 40px;
+}
+
+.wrong>h4
+{
+    margin: 40px;
+}
+
+.correct>h4
+{
+    margin: 40px;
+}
+
+.open-popinput
+{
+    transform: translate(-50%,-50%)scale(1);
+    visibility: visible;
+    top: 50%;
+}
+
+.popinput>input
+{
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 180px;
+    border: none;
+    border: 1px solid rgb(209, 209, 209);
+    color: rgb(209, 209, 209);
+    border-radius: 3px
+}
+.popinput>button
+{
+    width: 200px;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+.popinput>button:hover
+{
+    cursor: pointer;
+}
+
+#overlay
+{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0%;
+    right: 0%;
+    bottom: 0;
+    background-color: black;
+    opacity: 50%;
+}
+
+#popinput>input::placeholder
+{
+    text-align: center;
+}
+
+
+.popbuttn
+{
+    padding: 10px;
+    width: 100px;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    background-color: #691a47;
+}
+
+.popbuttn:hover
+{
+    cursor: pointer;
+}
+</style>
+<body>   
+    <div id="fr_nav">
+        <div id="fr_nav_left">
+            <img id="fr_logo" src="https://assets.milaap.org/assets/milaap-logo-tiny-4d3dbc4e55c2aaec351f0f376329c624236c4d6266b910f472684e70603f600d.png" alt="logo">
+            <h3>Setup fundraiser</h3>
+        </div>
+        <div id="fr_nav_step">
+            <p>Step 1 </p>
+            <p> of 4</p>
+        </div>
+    </div>
+
+
+    <div id="fr_main">
+        <div id="fr_top_title">
+            <p>Basic Details</p>
+        </div>
+        <div id="fr_cause_box">
+            <div id="fr_cause">
+                <h5>I am raising funds for a/an</h5>
+                <h5 id="fr_cause_text">Medical</h5>
+                <h5>cause</h5>
+            </div>
+            <div id="fr_cause_selection">
+                <div class="fr_select_div" onclick="d_medical()" id="fr_Medical">
+                    <i class="fa-solid fa-stethoscope"></i>
+                    <p class="fr_select_p" id="fr_cause_medical_p">Medical</p>
+                </div>
+                <div class="fr_select_div" onclick="education()" id="fr_Education">
+                    <i class="fa-solid fa-book-open-reader"></i>
+                    <p class="fr_select_p" id="fr_cause_education_p">Education</p>
+                </div>
+                <div class="fr_select_div" onclick="memorial()" id="fr_Memorial">
+                    <i class="fa-solid fa-monument"></i>
+                    <p class="fr_select_p" id="fr_cause_memorial_p">Memorial</p>
+                </div>
+                <div class="fr_select_div" onclick="other()" id="fr_Others">
+                    <i class="fa-solid fa-ellipsis"></i>
+                    <p class="fr_select_p" id="fr_cause_other_p">Others</p>
+                </div>
+            </div>
+        </div>
+        <div id="fr_form_box">
+            <form onsubmit="main(event)" id="fr_form">
+                <input id="fr_name" type="text" placeholder="Name" required>
+                <br>
+                <input id="fr_email" type="email" placeholder="Email ID" required>
+                <div fr_det_phone>
+                    <select class="fr_num" name="" id="+91" >
+                        <option value="">+91</option>
+                    </select>
+                    <input class="fr_num" id="fr_phonenum" inputmode="numeric" minlength="10" maxlength="10" placeholder="Phone number" required>
+                    <hr>
+                </div>
+        </div>
+
+    </div>
+    <div id="sub_box">
+        <div>
+            <input type="submit">
+        </div> 
+    </form>
+    </div>
+    <div id="overlay"></div>
+    <div class="popinput" id="popinput">
+        <input id="otpinput" type="password" maxlength="4" minlength="4" placeholder="Enter your OTP" required>
+        <br>
+        <button class="popbuttn" onclick="checkotp(event)">Continue</button>    
+    </div>
+    <div class="correct" id="popcorrect">
+        <img src="https://cdn-icons-png.flaticon.com/512/463/463574.png" alt="">
+        <h3>Sucessful</h3>
+        <button class="popbuttn" onclick="nextstep(event)">OK</button>
+    </div>
+    <div class="wrong" id="popwrong">
+        <img src="https://cdn-icons-png.flaticon.com/512/399/399274.png" alt="">
+        <h3>Wrong otp</h3>
+        <button class="popbuttn" onclick="window.location.reload()">Try again</button>
+    </div>
+</body>
+<script>
+
+class fundraiser
+{
+    constructor(s,n,m,mn)
+    {
+        this.section = s
+        this.name = n
+        this.mail = m
+        this.number = mn
+    }
+}
+
+function logoclick()
+{
+    window.location.href = "fundraiser.html"
+}
+let fr_selection ="medical"
+function main(e)
+{
+    e.preventDefault()
+    let number =document.getElementById("fr_phonenum").value
+
+    let wrong = document.getElementById("popwrong")
+    wrong.style.display = "none"
+    let mob = number
+    alert("otp is send to "+mob)
+    let overlay = document.getElementById("overlay")
+    overlay.style.display = "block"
+    popinput.classList.add("open-popinput")
+
+}
+
+let select_div1 = document.getElementById("fr_Medical")
+let select_div1_text = document.getElementById("fr_cause_medical_p")
+let select_div2 = document.getElementById("fr_Education")
+let select_div2_text = document.getElementById("fr_cause_education_p")
+let select_div3 = document.getElementById("fr_Memorial")
+let select_div3_text = document.getElementById("fr_cause_memorial_p")
+let select_div4 = document.getElementById("fr_Others")
+let select_div4_text = document.getElementById("fr_cause_other_p")
+
+
+function d_medical()
+{
+
+    fr_selection = "medical"
+    select_div2.style.backgroundColor = "white"
+    select_div2_text.style.color = "black"
+    select_div3.style.backgroundColor = "white"
+    select_div3_text.style.color = "black"
+    select_div4.style.backgroundColor = "white"
+    select_div4_text.style.color = "black"
+    let div_medical = document.getElementById("fr_Medical")
+    div_medical.style.backgroundColor = "#691a47"
+    let text = document.getElementById("fr_cause_medical_p")
+    text.style.color = "white"
+    let toptext = document.getElementById("fr_cause_text")
+    toptext.innerText = "Medical"
+    
+}
+function education()
+{
+    fr_selection = "education"
+    select_div1.style.backgroundColor = "white"
+    select_div1_text.style.color = "black"
+    select_div3.style.backgroundColor = "white"
+    select_div3_text.style.color = "black"
+    select_div4.style.backgroundColor = "white"
+    select_div4_text.style.color = "black"
+    let div_education = document.getElementById("fr_Education")
+    div_education.style.backgroundColor = "#691a47"
+    let text2 = document.getElementById("fr_cause_education_p")
+    text2.style.color = "white"
+    let toptext2 = document.getElementById("fr_cause_text")
+    toptext2.innerText = "Education"
+}
+function memorial()
+{
+    fr_selection = "memorial"
+    select_div1.style.backgroundColor = "white"
+    select_div1_text.style.color = "black"
+    select_div2.style.backgroundColor = "white"
+    select_div2_text.style.color = "black"
+    select_div4.style.backgroundColor = "white"
+    select_div4_text.style.color = "black"
+    let div_memorial = document.getElementById("fr_Memorial")
+    div_memorial.style.backgroundColor = "#691a47"
+    let text3 = document.getElementById("fr_cause_memorial_p")
+    text3.style.color = "white"
+    let toptext3 = document.getElementById("fr_cause_text")
+    toptext3.innerText = "Memorial"
+
+}
+function other()
+{
+    fr_selection = "other"
+    select_div1.style.backgroundColor = "white"
+    select_div1_text.style.color = "black"
+    select_div3.style.backgroundColor = "white"
+    select_div3_text.style.color = "black"
+    select_div2.style.backgroundColor = "white"
+    select_div2_text.style.color = "black"
+
+    let div_other = document.getElementById("fr_Others")
+    div_other.style.backgroundColor = "#691a47"
+    let text4 = document.getElementById("fr_cause_other_p")
+    text4.style.color = "white"
+    let toptext4 = document.getElementById("fr_cause_text")
+    toptext4.innerText = "Other"
+}
+
+
+
+
+
+
+
+
+function checkotp(e)
+{
+    e.preventDefault()
+    let otpinput = document.getElementById("otpinput").value
+    if(otpinput === "7453")
+    {
+        popcorrect()
+    }
+    else
+    {
+        popwrong()
+    }
+}
+
+function popcorrect()
+{
+    step1complete()
+    popinput.classList.remove("open-popinput");
+    let correct = document.getElementById("popcorrect")
+    correct.style.display = "block"
+}
+
+function popwrong()
+{
+    popinput.classList.remove("open-popinput")
+    let wrong = document.getElementById("popwrong")
+    wrong.style.display = "block"
+    
+}
+
+
+function step1complete()
+{
+    let name = document.getElementById("fr_name").value
+    let mail = document.getElementById("fr_email").value
+    let number =+document.getElementById("fr_phonenum").value
+
+    let data = new fundraiser(fr_selection,name,mail,number)
+    localStorage.setItem("step1data",JSON.stringify(data))
+}
+
+function nextstep(e)
+{
+    e.preventDefault()
+    window.location.href="fundraise_pg-2.html"
+}
+
+</script>
+</html>
