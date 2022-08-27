@@ -86,10 +86,12 @@
             font-size: 14px;
             top: 36%;
         }
-        #veri{
+        #verify{
             background-color: #983252;
             color: white;
             border-radius: 20px;
+            cursor: not-allowed;
+            opacity: 0.2;
         }
         #skip{
             display: block;
@@ -104,6 +106,15 @@
         .con{
             text-align: center;
         }
+        #spn{
+            position: absolute;
+            right: 22%;
+            top: 34%;
+            color: #983252;
+            font-size: 14px;
+            cursor: pointer;
+        }
+       
     </style>
 </head>
 
@@ -121,10 +132,11 @@
                 <img src="https://assets.milaap.org/assets/user_management/phone-logo-ac51ef4dd8340206fdb93a5c7dd77687f3778882557865966f33c0742f9a70d9.png" alt="">
                 <p>Verify your mobile number and receive priority support just anytime</p>
             </div>
-            <input type="number" placeholder="Phone number" id="mobile">
+            <span id="spn">Get OTP</span>
+            <input type="text" placeholder="Phone number" id="mobile">
             <input type="password" id="otp">
             <label for="otp" id="ot">OTP</label>
-            <button id="verify">Verify</button>
+            <button id="verify" disabled>Verify</button>
             <a href="login.html" id="skip">Skip for now</a>
         </div>
     </div>
@@ -153,6 +165,37 @@
         document.getElementById("mobile").value = null;
         document.getElementById("otp").value = null;
 
+    });
+
+    document.getElementById("mobile").addEventListener("keyup",()=>{
+        btnabl();
     })
+      document.getElementById("otp").addEventListener("keyup",()=>{
+        btnabl();
+    })
+    
+
+    function btnabl(){
+       let mobile=document.getElementById("mobile").value;
+        let otp=document.getElementById("otp").value;
+
+       if(mobile!==""&&otp!==""){
+        let x=document.getElementById("verify");
+        x.removeAttribute("disabled");
+        x.style.opacity="1";
+        x.style.cursor="pointer";
+       }
+    }
+
+    document.getElementById("spn").addEventListener("click",()=>{
+        let mbl=document.getElementById("mobile").value;
+        if(mbl==""){
+            return;
+        }else if(mbl.length<10){
+            alert(`Error : Mobile No. ${mbl} is Invalid`);
+        }else{
+            alert(`OTP is sent to you Mobile No. ${mbl}`);
+        }
+    });
 
 </script>

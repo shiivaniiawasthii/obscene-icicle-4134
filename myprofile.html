@@ -102,9 +102,10 @@
          <p>State</p>
         </div>
         <div>
-         <input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text">
-         <button id="save"><i class="fa-regular fa-floppy-disk"></i> Save</button>
-        </div> 
+            <input type="text" id="pan"><input type="text" id="n_pan"><input type="text" id="ad1"><input type="text" id="ad2">
+            <input type="text" id="city"><input type="text" id="state">
+            <button id="save"><i class="fa-regular fa-floppy-disk"></i> Save</button>
+           </div> 
      </div>
      <div id="footer"></div>
     
@@ -149,6 +150,24 @@ for(let i in single){
     if(single[i].mbl){
     document.getElementById("pn").value=single[i].mbl;
     }
+    if(single[i].pan){
+        document.getElementById("pan").value=single[i].pan;
+    }
+    if(single[i].name_pan){
+        document.getElementById("n_pan").value=single[i].name_pan;
+    }
+    if(single[i].address1){
+        document.getElementById("ad1").value=single[i].address1;
+    }
+    if(single[i].address2){
+        document.getElementById("ad2").value=single[i].address2;
+    }
+    if(single[i].city){
+        document.getElementById("city").value=single[i].city;
+    }
+    if(single[i].state){
+        document.getElementById("state").value=single[i].state;
+    }
 }
 }
 
@@ -162,6 +181,12 @@ function updatedata(){
     let rem=document.getElementById("rem").value;
     let aem=document.getElementById("aem").value;
     let pn=document.getElementById("pn").value;
+    let pan=document.getElementById("pan").value;
+    let npan=document.getElementById("n_pan").value;
+    let ad1=document.getElementById("ad1").value;
+    let ad2=document.getElementById("ad2").value;
+    let city=document.getElementById("city").value;
+    let state=document.getElementById("state").value;
 
     
 
@@ -171,6 +196,12 @@ function updatedata(){
         if(totaldata[i].id==x){
             totaldata[i].name=`${fname} ${lname}`;
             totaldata[i].mbl=Number(pn);
+            totaldata[i].pan=pan;
+            totaldata[i].name_pan=npan;
+            totaldata[i].address1=ad1;
+            totaldata[i].address2=ad2;
+            totaldata[i].city=city;
+            totaldata[i].state=state;
             if(aem===rem){
                 alert("Same as registered Email id")
             }else if(aem!==rem){

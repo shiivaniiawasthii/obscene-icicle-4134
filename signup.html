@@ -59,7 +59,6 @@
             background-color: #983252;
             color: white;
             border: none;
-            cursor: pointer;
         }
         #nam{
             position: absolute;
@@ -128,6 +127,14 @@
             top: 30%;
             left: 30%;
         }
+        #spn{
+            margin-left: 95%;
+            cursor: pointer;
+        }
+        #signup_data{
+            opacity: 0.2;
+            cursor: not-allowed;
+        }
 
         
     </style>
@@ -143,6 +150,7 @@
             <p>India’s largest crowdfunding site</p>
         </div>
         <div id="form_display">
+            <span id="spn">X</span>
             <div class="con">
                 <p>Sign up & manage fundraisers, donations & more</p>
             </div>
@@ -152,7 +160,7 @@
             <label for="email" id="mail">Email</label>
             <input type="password" id="password" required>
             <label for="password" id="pass">Password</label>
-            <button id="signup_data">Sign up</button>
+            <button id="signup_data" disabled>Sign up</button>
             <div class="con" id="con1">
                 <p>Already signed up with Milaap?</p>
                 <button id="lgin">Login</button>
@@ -210,4 +218,32 @@
     document.getElementById("lgin").addEventListener("click",()=>{
         window.location.href="login.html"
     })
+
+    document.getElementById("spn").addEventListener("click",()=>{
+        window.location.href="index.html";
+    })
+
+
+    document.getElementById("name").addEventListener("keyup",()=>{
+        btnabl();
+    })
+      document.getElementById("email").addEventListener("keyup",()=>{
+        btnabl();
+    })
+    document.getElementById("password").addEventListener("keyup",()=>{
+        btnabl();
+    })
+
+    function btnabl(){
+       let name=document.getElementById("name").value;
+        let email=document.getElementById("email").value;
+       let password=document.getElementById("password").value;
+
+       if(name!==""&&email!==""&&password!==""){
+        let x=document.getElementById("signup_data");
+        x.removeAttribute("disabled");
+        x.style.opacity="1";
+        x.style.cursor="pointer";
+       }
+    }
 </script>
