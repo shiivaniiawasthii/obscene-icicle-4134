@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./components/nav.css">
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <style>
@@ -231,6 +232,7 @@
 </head>
 
 <body>
+    <div id="nav"></div>
     <div class="frst">
         <h1 id="logged_prsn"></h1>
     </div>
@@ -324,6 +326,8 @@
             You can also call us at + 91 9916174848 Monday – Friday 10AM to 7PM (IST).
         </div>
     </div>
+
+    <div id="footer"></div>
 
 </body>
 
@@ -421,6 +425,9 @@
             money.append(raise, gol)
             let btn = document.createElement("button");
             btn.innerText = "Lend now"
+            btn.addEventListener("click",function(){
+                window.location.href="lend.html"
+            })
             btn.setAttribute("class", "lnd")
             let box = document.createElement("div");
             box.setAttribute("class", "con")
@@ -551,4 +558,11 @@
 
 
 
+</script>
+<script type="module" src="./components/nav_fun.js"></script>
+
+<script type="module">
+    import footer from "./components/footer.js"
+    document.getElementById("footer").innerHTML=footer()
+    console.log(footer)
 </script>

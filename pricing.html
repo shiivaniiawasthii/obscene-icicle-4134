@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing</title>
+    <link rel="stylesheet" href="./components/nav.css">
 
     <style>
         
@@ -223,6 +224,10 @@
   width: 150px;
   margin-left: 100px;
 }
+#ab a{
+  text-decoration: none;
+  color: #9C3353;
+}
     </style>
 </head>
 <body>
@@ -239,7 +244,7 @@
             <h2>RAISE MAXIMUM FUNDS FOR THE CAUSE YOU </h2>
             <h2>CARE ABOUT</h2>
             <hr>
-            <button>Start a fundraiser</button>
+            <button id="ab"><a href="./Rahul/fundraise_pg-1.html">Start a fundraiser</a></button>
         </div>
     </div>
 
@@ -309,4 +314,12 @@ function updateTextInput(val) {
 
     console.log(value)
   }
+</script>
+
+<script type="module" src="./components/nav_fun.js"></script>
+
+<script type="module">
+    import footer from "./components/footer.js"
+    document.getElementById("footer").innerHTML=footer()
+    console.log(footer)
 </script>

@@ -1,0 +1,125 @@
+#nav_front {
+        display: flex;
+        /* border: 1px solid blue; */
+        color: #212121;
+        background-color: #FFFFFF;
+        width: 50%;
+        margin-left: 20px;
+
+
+}
+
+#nav_logo {
+        width: 110px;
+}
+
+.nav_divs {
+        width: fit-content;
+        /* border: 1px solid red; */
+        margin: 5px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+
+        padding: 8px;
+        font-size: 16px;
+        text-align: center;
+
+
+
+}
+
+.nav_divs a {
+        width: fit-content;
+        display: block;
+        margin-left: 10px;
+        margin-top: 10px;
+        /* border: 1px solid yellow; */
+        font-size: 18px;
+        font-weight: lighter;
+        text-decoration: none;
+        color: black;
+
+}
+
+.nav_divs:hover {
+        background-color: #9C3353;
+        color: white;
+       text-decoration: none;
+
+}
+
+#nav {
+        display: flex;
+        padding: 10px;
+        /* border: 1px solid black; */
+        margin-top: -8px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+        height: 60px;
+        background-color: white;
+        width: 100%;
+        position: sticky;
+        
+
+}
+
+#start_fund {
+
+        border-radius: 20px;
+        font-size: 20px;
+        background-color: #9C3353;
+        color: white;
+        height: 40px;
+        width: 220px;
+        text-align: center;
+        margin-top: 10px;
+        margin-left: 10px;
+
+
+}
+
+#start_fund a {
+        display: block;
+        margin-top: 8px;
+        text-decoration: none;
+        color: #FFFFFF;
+        /* border: 1px solid red; */
+}
+#profile img{
+        display: block;
+        /* border: 1px solid blue; */
+        margin-left: 160px;
+        width: 50px;
+}
+
+.profile_name{
+        
+        padding: 10px;
+        padding-top: -13px;
+        display: block;
+       
+        text-align: center;
+        margin-left: 160px;
+}
+.main2{
+        
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+        margin-top: 90px;
+        width: 190px;
+        display: block;
+        text-align: center;
+       
+        font-size: 14px;
+        color:grey;
+        margin-left: -100px;
+        position: fixed;
+}
+.main2 h3 a{
+        font-weight:lighter;
+      text-decoration: none;
+         font-size: 14px;
+        color:grey;
+       
+
+        
+} 
